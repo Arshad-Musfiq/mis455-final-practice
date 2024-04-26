@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure footer stays at the bottom */
+  position: relative;
+}
+
+.container {
+  margin: auto;
+  padding: 20px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: calc(100% - 50px);
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-btn,
+.random-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover,
+.random-btn:hover {
+  background-color: #0056b3;
+}
+
+.meals {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Increase min width of meal container */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.meal {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.meal:hover {
+  transform: translateY(-5px);
+}
+
+.meal img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.meal-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  color: #fff;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.meal:hover .meal-info {
+  opacity: 1;
+}
+
+.single-meal {
+  margin: 30px auto;
+  width: 90%;
+}
+
+.single-meal img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto 15px;
+  border-radius: 10px;
+}
+
+.single-meal-info {
+  margin-bottom: 20px;
+}
+
+.single-meal p {
+  margin: 10px 0;
+}
+
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  input[type="text"] {
+    width: 100%;
+  }
+}
